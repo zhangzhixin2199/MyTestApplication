@@ -1,0 +1,11 @@
+name: Manual Trigger Workflow
+
+on:
+  workflow_dispatch: # 手动触发器，不需要额外配置
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run: echo "Hello, GitHub Actions!"
