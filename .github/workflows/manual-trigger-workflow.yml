@@ -2,10 +2,14 @@ name: Manual Trigger Workflow
 
 on:
   workflow_dispatch: # 手动触发器，不需要额外配置
+    inputs:
+      version_number:
+        description: Version number. E.g. 1.1.1
+        type: string
 
 jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
       - name: Hello World
-        run: echo "Hello, GitHub Actions!"
+        run: echo "Hello, GitHub Actions! ${{inputs.version_number}}"
